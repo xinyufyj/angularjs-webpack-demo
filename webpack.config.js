@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack')
 
 module.exports = env => {
   return {
@@ -16,20 +17,29 @@ module.exports = env => {
     module: {
       rules: [
         {
-          test: /\.lazy\.html$/,
-          type: 'asset/resource',
-        },
-        {
           test: /\.html$/i,
-          exclude: /\.lazy\.html$/,
           loader: "html-loader",
         },
         {
           test: /\.(png|svg|jpg|jpeg|gif)$/i,
           type: 'asset/resource',
         },
+        // {
+        //   test: require.resolve('angular'),
+        //   use: {
+        //     loader: 'exports-loader',
+        //     options: {
+        //       exports: 'angular'
+        //     }
+        //   }
+        // },
       ],
     },
+    // resolve: {
+    //   alias: {
+    //     angular: __dirname + "/node_modules/angular/angular.min.js"
+    //   }
+    // },
     devServer: {
       static: {
         directory: path.join(__dirname, 'public'),

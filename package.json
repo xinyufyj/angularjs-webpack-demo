@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "exports-loader": "^3.1.0",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
     "webpack": "^5.70.0",
@@ -20,7 +21,6 @@
   },
   "dependencies": {
     "@uirouter/angularjs": "^1.0.30",
-    "@uirouter/core": "^6.0.8",
     "angular": "^1.8.2",
     "angular-ui-bootstrap": "^2.5.6"
   }
